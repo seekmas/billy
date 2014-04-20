@@ -8,40 +8,28 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Billt look the soap</h1>
-    <div class="content">
+    
+    <div class="content" id="stage_1">
         <h2 class="content-head is-center">Stage One</h2>
 
         {{include('CmsPortalBundle:Default:Static/stage_one.html.twig')}}
     </div>
 
-    <div class="ribbon l-box-lrg pure-g">
+    <div class="ribbon l-box-lrg pure-g" id="stage_2">
         <h2 class="content-head is-center">Stage Two</h2>
 
         {{include('CmsPortalBundle:Default:Static/stage_two.html.twig')}}
     </div>
 
-    <div class="content">
+    <div class="content"  id="stage_3">
         <h2 class="content-head is-center">Stage Three</h2>
 
         {{include('CmsPortalBundle:Default:Static/stage_three.html.twig')}}
     </div>
 
-    <div class="ribbon l-box-lrg pure-g">
+    <div class="ribbon l-box-lrg pure-g"  id="stage_4">
         <h2 class="content-head is-center">Stage Four</h2>
         {{include('CmsPortalBundle:Default:Static/stage_four.html.twig')}}
     </div>
-
-{% endblock %}
-
-{% block javascript %}
-
-{{parent()}}
-
-$(function(){
-        
-
-
-});
 
 {% endblock %}

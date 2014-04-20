@@ -1,14 +1,16 @@
 <div class="header">
-    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed" id="demo-horizontal-menu">
         <a class="pure-menu-heading" href="">Makoto</a>
+        <ul id="std-menu-items">
+            <li {% if route == 'cms_portal_homepage' or route == 'home_page' %}class="pure-menu-selected"{% endif %}><a href="{{url('cms_portal_homepage')}}">Home</a>
+            </li>
 
-        <ul>
-            <li {% if route == 'cms_portal_homepage' or route == 'home_page' %}class="pure-menu-selected"{% endif %}><a href="{{url('cms_portal_homepage')}}">Home</a></li>
-
-            <li {% if route == 'cms_portal_introduce' %}class="pure-menu-selected"{% endif %}><a href="{{url('cms_portal_introduce')}}">Introduce</a></li>
+            <li {% if route == 'cms_portal_introduce' %}class="pure-menu-selected"{% endif %}>
+                <a href="{{url('cms_portal_introduce')}}">Introduce</a></li>
 
             <li><a href="#">Sign Up</a></li>
 
         </ul>
+
     </div>
 </div>

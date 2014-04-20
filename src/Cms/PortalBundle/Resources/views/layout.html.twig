@@ -9,18 +9,20 @@
 {% block main %}
 
             {% block nav %}
+
                 {{render_esi( controller('CmsModuleBundle:Default:nav' , { 'route' : app.request.attributes.all._route }))}}
+
             {% endblock %}
 
             {% block home %}
+
                 {% if app.request.attributes.all._route == 'cms_portal_homepage' or app.request.attributes.all._route == 'home_page' %}
                     
                         {{render_esi( controller('CmsModuleBundle:Default:home'))}}
                     
                 {% endif %}
-            {% endblock %}
 
-            {{app.request.attributes.all._route}}
+            {% endblock %}
 
         <div class="content-wrapper">
 
@@ -30,11 +32,17 @@
 
 
             {% if app.request.attributes.all._route == 'cms_portal_homepage' or app.request.attributes.all._route == 'home_page' %}
+
                 <div class="footer l-box is-center">
+
                 {% block footer %}
+
                     {{render_esi( controller('CmsModuleBundle:Default:footer'))}}
+
                 {% endblock %}
+                
                 </div>
+
             {% endif %}
 
         </div>
@@ -42,7 +50,12 @@
 {% endblock %}
 
 
-{% block javascript %}
+{% block javascripts %}
+<script src="{{ asset('assets/js/jquery-1.9.1.js') }}"></script>
+<script>
+jQuery.noConflict();
+</script>
+
 <script src="{{ asset('bundles/scrollTo/jquery.scrollTo.min.js') }}"></script>
 
 <script src="http://yui.yahooapis.com/3.14.1/build/yui/yui-min.js"></script>
