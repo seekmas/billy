@@ -1,0 +1,7 @@
+parameters:
+#    cms_module.example.class: Cms\ModuleBundle\Example
+
+services:
+#    cms_module.example:
+#        class: %cms_module.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

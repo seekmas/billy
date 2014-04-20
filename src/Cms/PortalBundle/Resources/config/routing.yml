@@ -1,0 +1,7 @@
+cms_portal_homepage:
+    pattern:  /
+    defaults: { _controller: CmsPortalBundle:Default:index }
+
+cms_portal_introduce:
+    pattern:  /introduce
+    defaults: { _controller: CmsPortalBundle:Default:introduce }

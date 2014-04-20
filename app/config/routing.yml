@@ -1,0 +1,12 @@
+home_page:
+    pattern: /
+    defaults: { _controller : CmsPortalBundle:Default:index }
+
+cms_module:
+    resource: "@CmsModuleBundle/Resources/config/routing.yml"
+    prefix:   /module
+
+cms_portal:
+    resource: "@CmsPortalBundle/Resources/config/routing.yml"
+    prefix:   /portal
+

@@ -1,0 +1,58 @@
+{% extends "::origin.html.twig" %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/marketing.css') }}">
+{% endblock %}
+
+{% block main %}
+
+            {% block nav %}
+                {{render_esi( controller('CmsModuleBundle:Default:nav' , { 'route' : app.request.attributes.all._route }))}}
+            {% endblock %}
+
+            {% block home %}
+                {% if app.request.attributes.all._route == 'cms_portal_homepage' or app.request.attributes.all._route == 'home_page' %}
+                    
+                        {{render_esi( controller('CmsModuleBundle:Default:home'))}}
+                    
+                {% endif %}
+            {% endblock %}
+
+            {{app.request.attributes.all._route}}
+
+        <div class="content-wrapper">
+
+            {% block body %}
+
+            {% endblock %}
+
+
+            {% if app.request.attributes.all._route == 'cms_portal_homepage' or app.request.attributes.all._route == 'home_page' %}
+                <div class="footer l-box is-center">
+                {% block footer %}
+                    {{render_esi( controller('CmsModuleBundle:Default:footer'))}}
+                {% endblock %}
+                </div>
+            {% endif %}
+
+        </div>
+
+{% endblock %}
+
+
+{% block javascript %}
+<script src="{{ asset('bundles/scrollTo/jquery.scrollTo.min.js') }}"></script>
+
+<script src="http://yui.yahooapis.com/3.14.1/build/yui/yui-min.js"></script>
+<script>
+YUI().use('node-base', 'node-event-delegate', function (Y) {
+    // This just makes sure that the href="#" attached to the <a> elements
+    // don't scroll you back up the page.
+    Y.one('body').delegate('click', function (e) {
+        e.preventDefault();
+    }, 'a[href="#"]');
+});
+</script>  
+{% endblock %}
